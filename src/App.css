@@ -1,0 +1,525 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+.app {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  background: linear-gradient(to bottom, #0a1f24, #2a4c46);
+  background-image: url('./green6_copy.png');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  /* transition: transform 0.1s ease-out, filter 0.5s ease; */
+}
+
+/* Current Sponsors Section */
+.sponsors-section {
+  padding: 80px 20px;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+
+
+.sponsors-section h1,
+.past h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  background: linear-gradient(180deg, #ffffff 0%, #a3a3a3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0px 4px 15px rgba(255, 255, 255, 0.35);
+  letter-spacing: 2px;
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: #a3a3a3;
+  margin-bottom: 60px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.sponsors-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sponsor-container {
+  display: flex;
+}
+
+.sponsor-container.left {
+  justify-content: flex-start;
+  padding-left: 100px;
+}
+
+.sponsor-container.right {
+  justify-content: center;
+  padding-right: 100px;
+}
+
+.sponsor-box, .rectangle {
+  width: 220px;
+  height: 220px;
+  background-color: transparent;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.sponsor-box {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sponsor-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.5);
+}
+
+.rectangle-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.rectangle:hover .rectangle-inner {
+  transform: rotateY(180deg);
+}
+
+.rectangle-front, .rectangle-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: box-shadow 0.3s ease;
+}
+
+.rectangle:hover .rectangle-front,
+.rectangle:hover .rectangle-back {
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.5);
+}
+
+.rectangle-front {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.rectangle-back {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.sponsor-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.sponsor-box:hover .sponsor-image,
+.rectangle:hover .sponsor-image {
+  transform: scale(1.1);
+}
+
+/* Past Sponsors Section */
+.past {
+  color: #fff;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 5vw;
+  position: relative;
+  background: linear-gradient(to bottom, rgba(10, 31, 36, 0.8), rgba(18, 42, 38, 0.8));
+  transition: background 0.5s ease;
+}
+
+.past-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #122a26, #0a1f24);
+  opacity: 0.95;
+  z-index: -1;
+  transition: opacity 0.5s ease;
+}
+
+.sponsors-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
+  gap: 60px;
+}
+
+.flat, .block, .set_two, .set_three {
+  display: flex;
+  justify-content: flex-start;
+  gap: 40px;
+  width: 100%;
+}
+
+.image {
+  width: 220px;
+  height: 220px;
+  background-image: url('./WIND-removebg-preview (1).png');
+  background-size: contain;
+  background-position: left center;
+  background-repeat: no-repeat;
+  position: relative;
+  left: 0;
+  margin-right: 20px;
+}
+
+.set_two.offset {
+  align-self: flex-start;
+  margin-left: 15%;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .sponsors-container {
+    gap: 40px;
+  }
+
+  .sponsor-box, .rectangle, .image {
+    width: 200px;
+    height: 200px;
+  }
+
+  .set_two.offset {
+    margin-left: 10%;
+  }
+}
+
+@media (max-width: 768px) {
+  .sponsors-section h1,
+  .past h1 {
+    font-size: 3rem;
+  }
+  .subtitle {
+    font-size: 1.2rem;
+  }
+  .sponsors-section,
+  .past {
+    padding: 60px 3vw;
+  }
+
+  .sponsors-container {
+    gap: 30px;
+  }
+
+  .flat, .block, .set_two, .set_three {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+
+  .sponsor-box, .rectangle, .image {
+    width: 180px;
+    height: 180px;
+  }
+
+  .sponsor-container.left {
+    padding-left: 20px;
+  }
+
+  .sponsor-container.right {
+    padding-right: 20px;
+  }
+
+  .set_two.offset {
+    margin-left: 5%;
+  }
+}
+
+@media (max-width: 575px) {
+  .sponsors-section h1,
+  .past h1 {
+    font-size: 2.5rem;
+  }
+  .subtitle {
+    font-size: 1rem;
+  }
+  .sponsors-container {
+    gap: 20px;
+  }
+
+  .flat, .block, .set_two, .set_three {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .sponsor-box, .rectangle, .image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .set_two.offset {
+    margin-left: 0;
+  }
+
+  .sponsor-container.left,
+  .sponsor-container.right {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/* Animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.sponsor-box {
+  animation: float 6s ease-in-out infinite;
+}
+
+.sponsor-box:nth-child(odd) {
+  animation-delay: -3s;
+}
+
+/* Accessibility */
+.sponsor-box:focus, .rectangle:focus {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+}
+
+/* Glowing effect for sponsor boxes */
+@keyframes glow {
+  0% { box-shadow: 0 0 5px rgba(79, 172, 254, 0.5); }
+  50% { box-shadow: 0 0 20px rgba(79, 172, 254, 0.8); }
+  100% { box-shadow: 0 0 5px rgba(79, 172, 254, 0.5); }
+}
+
+.sponsor-box:hover {
+  animation: glow 2s infinite;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Parallax effect for background */
+.background {
+  transform: translateZ(-1px) scale(2);
+}
+
+/* Add a subtle text shadow to improve readability */
+.sponsors-section h1,
+.past h1 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* New animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.5s ease-out forwards;
+}
+
+/* Ensure animations play smoothly */
+* {
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+/* Accessibility improvements */
+.rectangle-back p {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Add focus styles for keyboard navigation */
+.rectangle:focus-within .rectangle-inner {
+  transform: rotateY(180deg);
+}
+
+.rectangle:focus-within {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+}
+
+/* Add hover effect for non-touch devices */
+@media (hover: hover) {
+  .rectangle:hover .rectangle-inner {
+    transform: rotateY(180deg);
+  }
+}
+
+/* Ensure text is visible on all background colors */
+.rectangle-back p {
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Background transition */
+.sponsors-section,
+.past,
+.background,
+.past-background {
+  transition: all 0.5s ease;
+}
+
+
+/* Improve text contrast */
+.subtitle {
+  color: #e0e0e0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Add subtle hover effect to sponsor boxes */
+.sponsor-box:hover,
+.rectangle:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+}
+
+/* Enhance 3D effect for rectangles */
+.rectangle {
+  transition: transform 0.3s ease;
+}
+
+.rectangle:hover {
+  transform: scale(1.05);
+}
+
+/* Add pulsating effect to current sponsors */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.sponsor-box {
+  animation: pulse 4s infinite;
+}
+
+.sponsor-box:hover {
+  animation: none;
+}
+
+/* Improve loading performance */
+.sponsor-image,
+.rectangle-inner {
+  will-change: transform;
+}
+
+/* Add this to your App.css file */
+
+/* Keyframes for star animation */
+@keyframes sprinkle {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+}
+
+/* Class for the star effect */
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Prevent interaction */
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  background: white; /* Color of the stars */
+  border-radius: 50%;
+  opacity: 0;
+  animation: sprinkle 2s infinite;
+}
+
+/* Adjust the size of the stars */
+.star.small {
+  width: 5px;
+  height: 5px;
+}
+
+.star.medium {
+  width: 10px;
+  height: 10px;
+}
+
+.star.large {
+  width: 15px;
+  height: 15px;
+}
